@@ -389,4 +389,4 @@ if __name__ == "__main__":
     demo = ui()
     # gr.close_all()
     demo.queue(concurrency_count=3, max_size=20)
-    demo.launch(share=True, server_name="127.0.0.1")
+    demo.launch()
