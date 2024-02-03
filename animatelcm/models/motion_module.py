@@ -292,7 +292,7 @@ class VersatileAttention(CrossAttention):
 
         query = self.to_q(hidden_states)
         dim = query.shape[-1]
-        query = self.reshape_heads_to_batch_dim(query)
+        query = self.head_to_batch_dim(query)
 
         if self.added_kv_proj_dim is not None:
             raise NotImplementedError
@@ -301,8 +301,8 @@ class VersatileAttention(CrossAttention):
         key = self.to_k(encoder_hidden_states)
         value = self.to_v(encoder_hidden_states)
 
-        key = self.reshape_heads_to_batch_dim(key)
-        value = self.reshape_heads_to_batch_dim(value)
+        key = self.head_to_batch_dim(key)
+        value = self.head_to_batch_dim(value)
 
         if attention_mask is not None:
             if attention_mask.shape[-1] != query.shape[1]:
