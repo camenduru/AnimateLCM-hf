@@ -294,7 +294,7 @@ def ui():
 
                 lora_model_dropdown = gr.Dropdown(
                     label="Select LoRA model (optional)",
-                    choices=["none"]
+                    choices=["none",]
                     value="none",
                     interactive=True,
                 )
